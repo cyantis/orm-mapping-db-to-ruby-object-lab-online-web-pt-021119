@@ -63,7 +63,7 @@ class Student
       WHERE grade = 10
       LIMIT 1
     SQL
-    
+
     student = DB[:conn].execute(sql, name).first
     self.new_from_db(student)
   end
