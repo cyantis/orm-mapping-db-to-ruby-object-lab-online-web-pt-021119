@@ -26,7 +26,7 @@ class Student
       FROM students
       WHERE name = ?
     SQL
-    
+
     student = DB[:conn].execute(sql, name).first
     self.new_from_db(student)
   end
@@ -37,7 +37,7 @@ class Student
       FROM students
       WHERE grade = 9
     SQL
-    
+
     student = DB[:conn].execute(sql)
     DB[:conn].execute(sql).collect {|row| self.new_from_db(row)}
   end
